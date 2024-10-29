@@ -43,6 +43,7 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -66,5 +67,10 @@ class User extends Authenticatable implements FilamentUser
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function userTestHistories()
+    {
+        return $this->hasMany(UserTestHistory::class);
     }
 }
