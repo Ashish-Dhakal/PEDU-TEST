@@ -31,9 +31,6 @@ class ChapterResource extends Resource
                 Forms\Components\TextInput::make('chapter_name')
                     ->required()
                     ->maxLength(100),
-                // Forms\Components\TextInput::make('subject_id')
-                //     ->numeric()
-                //     ->default(null),
                 Forms\Components\Select::make('subject_id')
                     ->label('Select Subject')
                     ->options(Subject::whereNotNull('subject_name')->pluck('subject_name', 'id')) // Adjusted to use the correct column name
